@@ -84,7 +84,9 @@ POST http://localhost/ask ({"question": "Explain microservices"}) -> HTTP 200
 ## Part 3: Cloud Deployment
 
 ### Exercise 3.1 / 3.2: Deploy Agent Part 6 (`06-lab-complete/`)
-- **Public URL:** *(Điền sau khi deploy lên Railway hoặc Render — xem `DEPLOYMENT.md`)*
+- **Platform:** Render (`Docker` runtime, Root Directory `06-lab-complete`, kết nối Render Key Value Redis)
+- **Public URL:** `https://day14-production-agent-gh9o.onrender.com`
+- **Kết quả 4 lệnh tự kiểm CP6:** `GET /health` → `200`, `GET /ready` → `200` (Redis connected), `POST /ask` không có key → `401`, `POST /ask` có `X-API-Key` → `200` (chi tiết trong `DEPLOYMENT.md`).
 - **Screenshots:** `screenshots/dashboard.png`, `screenshots/running.png`, `screenshots/test.png`
 
 ### So sánh `railway.toml` và `render.yaml`
